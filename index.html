@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bluetiek.in Coming Soon</title>
-  <style>
-    /* Dark background & centered content */
-    body {
-      background-color: #121212;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Bluetiek – Coming Soon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Big main text */
-    h1 {
-      font-size: 4rem;
-      margin: 20px 0;
-    }
+<style>
+  body {
+    background: #0f0f0f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
 
-    /* Optional paragraph styling */
-    p {
-      font-size: 1.5rem;
-      margin: 10px 0 30px;
-      color: #bbbbbb;
-    }
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+  }
 
-    /* Image styling */
-    img {
-      max-width: 300px;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    }
-  </style>
+  p {
+    font-size: 1.5rem;
+    color: #bbb;
+  }
+
+  img {
+    max-width: 320px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+</style>
 </head>
+
 <body>
-  <h1>Coming Soon!</h1>
-  <p>Our Website Will Be Live Shortly.</p>
-  <!-- Replace the URL below with your image URL -->
+
+<h1>Coming Soon</h1>
+<p>Something exciting is on the way</p>
+
   <img src="https://i.ibb.co/pr3RxgWg/6UBtVBQ.png" alt="Coming Soon Image">
   <img src="https://i.ibb.co/HLWRKRs8/rDUH6rp.png" alt="Coming Soon Image">
+
+<script>
+(async function checkPi() {
+  const PI_URL = "https://your-pi-site.example"; // CHANGE WHEN PI IS LIVE
+
+  try {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 2500);
+
+    await fetch(PI_URL, {
+      method: "HEAD",
+      mode: "no-cors",
+      signal: controller.signal
+    });
+
+    // If Pi responds, redirect silently
+    window.location.href = PI_URL;
+
+  } catch (e) {
+    // Pi offline — stay on Coming Soon
+  }
+})();
+</script>
+
 </body>
 </html>
-
